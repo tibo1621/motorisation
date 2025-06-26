@@ -154,12 +154,12 @@ header {
 }
 
 .ligne label {
-  width: 65%;
+  width: 85%;
   font-weight: bold;
 }
 
 .ligne input {
-  width: 15%;
+  width: 25%;
   padding: 8px 10px;
   border-radius: 35px;
   border: 1px solid #fff;
