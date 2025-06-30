@@ -30,44 +30,27 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
   }
 
   // Calculs intermédiaires
-const penteRad = penteDeg * Math.PI / 180;
-const rayon = d / 2;
+  const penteRad = penteDeg * Math.PI / 180;
+  const rayon = d / 2;
+  const v_ang = (vitesse / rayon)*reducteur;
+  const Fa = masse * acc;
+  const Fs = masse * g * Math.sin(penteRad);
+  const Fopp = (0.5 * Den * C * sur * vitesse * vitesse) + (masse * g * Crr);
+  const Fn = Fa + Fs + Fopp;
+  const cou = (Fn * rayon)/(reducteur * rendement);
 
-// Vitesse angulaire à la roue (sortie) en rad/s
-const v_ang_sortie = vitesse / rayon;
+  const puissance_tot = (cou * v_ang) / (rend / 100);
+  const puissance = puissance_tot / nb_moteur;
 
-// Force d'accélération, gravité sur pente, et oppositions
-const Fa = masse * acc;
-const Fs = masse * g * Math.sin(penteRad);
-const Fopp = (0.5 * Den * C * sur * vitesse * vitesse) + (masse * g * Crr);
-
-// Force nette nécessaire à la roue
-const Fn = Fa + Fs + Fopp;
-
-// Couple à la roue (sortie)
-const cou_sortie = Fn * rayon;
-
-// Rendement total de transmission
-const rendement_transmission = rend / 100;
-
-// Côté moteur (entrée) après réducteur
-const v_ang_moteur = v_ang_sortie * reducteur;
-const cou_moteur = cou_sortie / (reducteur * rendement_transmission);
-
-// Puissance absorbée par le moteur
-const puissance_tot = cou_moteur * v_ang_moteur;
-const puissance = puissance_tot / nb_moteur;
-
-// Courant et capacité batterie
-const I = puissance / tension;
-const bat = I * (temps / 60);
+  const I = puissance / tension;
+  const bat = I * (temps / 60);
 
 
   // Affichage résultats dans les inputs
   document.getElementById("resultat_puissance_tot").value = puissance_tot.toFixed(2);
   document.getElementById("resultat_puissance").value = puissance.toFixed(2);
-  document.getElementById("resultat_vitesse_angulaire").value = v_ang_moteur.toFixed(2);
-  document.getElementById("resultat_couple").value = cou_moteur.toFixed(2);
+  document.getElementById("resultat_vitesse_angulaire").value = v_ang.toFixed(2);
+  document.getElementById("resultat_couple").value = cou.toFixed(2);
   document.getElementById("resultat_courant").value = I.toFixed(2);
   document.getElementById("resultat_batterie").value = bat.toFixed(2);
 
