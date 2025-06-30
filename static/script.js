@@ -88,6 +88,7 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
       data: {
         labels: vitesses,
         datasets: [{
+          label: 'Puissance en fonction de la vitesse'
           data: puissances,
           fill: false,
           borderColor: 'rgba(75, 192, 192, 1)',
