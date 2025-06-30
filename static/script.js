@@ -23,7 +23,7 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
   // Vérification des valeurs
   if (
     isNaN(masse) || isNaN(penteDeg) || isNaN(vitesse) || isNaN(acc) ||
-    isNaN(d) || isNaN(nb_moteur) || isNaN(tension) || isNaN(temps) || isNaN(rend)
+    isNaN(d) || isNaN(nb_moteur) || isNaN(tension) || isNaN(temps) || isNaN(rend) || isNaN(reducteur)
   ) {
     alert("Veuillez remplir correctement tous les champs nécessaires.");
     return;
