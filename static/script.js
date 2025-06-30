@@ -11,6 +11,7 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
   const tension = parseFloat(document.getElementById("tension").value);
   const temps = parseFloat(document.getElementById("temps").value);
   const rend = parseFloat(document.getElementById("rendement").value);
+  const reducteur = parseFloat(document.getElementById("reducteur").value);
 
   // Constantes fixes
   const sur = 0.1;
