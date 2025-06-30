@@ -66,8 +66,8 @@ const bat = I * (temps / 60);
   // Affichage résultats dans les inputs
   document.getElementById("resultat_puissance_tot").value = puissance_tot.toFixed(2);
   document.getElementById("resultat_puissance").value = puissance.toFixed(2);
-  document.getElementById("resultat_vitesse_angulaire").value = v_ang.toFixed(2);
-  document.getElementById("resultat_couple").value = cou.toFixed(2);
+  document.getElementById("resultat_vitesse_angulaire").value = v_ang_moteur.toFixed(2);
+  document.getElementById("resultat_couple").value = cou_moteur.toFixed(2);
   document.getElementById("resultat_courant").value = I.toFixed(2);
   document.getElementById("resultat_batterie").value = bat.toFixed(2);
 
