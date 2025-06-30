@@ -62,6 +62,11 @@
       </div>
 
       <div class="ligne">
+        <label for="reducteur">Diamètre des roues (m) :</label>
+        <input type="number" id="reducteur" name="reducteur" step="1" />
+      </div>
+
+      <div class="ligne">
         <label for="surface">Surface frontale (m²) :</label>
         <input type="number" id="surface" name="surface" step="0.1" />
       </div>
@@ -126,14 +131,6 @@
       <input type="text" id="resultat_puissance_tot" readonly />
     </div>
     <div class="ligne-resultat">
-      <label for="resultat_vitesse_angulaire">Vitesse angulaire (rad/s) :</label>
-      <input type="text" id="resultat_vitesse_angulaire" readonly />
-    </div>
-    <div class="ligne-resultat">
-      <label for="resultat_courant">Courant maximum (A):</label>
-      <input type="text" id="resultat_courant" readonly />
-    </div>
-    <div class="ligne-resultat">
       <label for="resultat_puissance">Puissance par moteur (W) :</label>
       <input type="text" id="resultat_puissance" readonly />
     </div>
@@ -141,6 +138,13 @@
       <label for="resultat_couple">Couple (N.m):</label>
       <input type="text" id="resultat_couple" readonly />
     </div>
+    <div class="ligne-resultat">
+      <label for="resultat_vitesse_angulaire">Vitesse angulaire (rad/s) :</label>
+      <input type="text" id="resultat_vitesse_angulaire" readonly />
+    </div>
+    <div class="ligne-resultat">
+      <label for="resultat_courant">Courant maximum (A):</label>
+      <input type="text" id="resultat_courant" readonly />
     <div class="ligne-resultat">
       <label for="resultat_batterie">Capacité batterie (Ah):</label>
       <input type="text" id="resultat_batterie" readonly />
