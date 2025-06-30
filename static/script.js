@@ -37,7 +37,7 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
   const Fs = masse * g * Math.sin(penteRad);
   const Fopp = (0.5 * Den * C * sur * vitesse * vitesse) + (masse * g * Crr);
   const Fn = Fa + Fs + Fopp;
-  const cou = (Fn * rayon)/(reducteur * rendement);
+  const cou = (Fn * rayon)/(reducteur * (rend / 100));
 
   const puissance_tot = (cou * v_ang) / (rend / 100);
   const puissance = puissance_tot / nb_moteur;
@@ -67,10 +67,10 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
   const nbPoints = 30;
   for(let i = 0; i <= nbPoints; i++) {
     const v = (vitesse * 2) * (i / nbPoints);
-    const v_ang_temp = v / rayon;
+    const v_ang_temp = (v / rayon)* reducteur;
     const Fopp_temp = (0.5 * Den * C * sur * v * v) + (masse * g * Crr);
     const Fn_temp = Fa + Fs + Fopp_temp;
-    const cou_temp = Fn_temp * rayon;
+    const cou_temp = (Fn_temp * rayon) / (reducteur * (rend / 100));
     const p = (cou_temp * v_ang_temp) / (rend / 100);
     vitesses.push(v.toFixed(2));
     puissances.push(Math.round(p * 100) / 100);
