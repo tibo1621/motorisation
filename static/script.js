@@ -32,7 +32,8 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
   // Calculs intermédiaires
   const penteRad = penteDeg * Math.PI / 180;
   const rayon = d / 2;
-  const v_ang = (vitesse / rayon) / reducteur;
+  const v_ang = (vitesse / rayon) * reducteur;
+  const tr_min = v_ang * 60 / (2 * Math.PI);
   const Fa = masse * acc;
   const Fs = masse * g * Math.sin(penteRad);
   const Fopp = (0.5 * Den * C * sur * vitesse * vitesse) + (masse * g * Crr);
@@ -53,6 +54,7 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
   document.getElementById("resultat_couple_tot").value = cou_tot.toFixed(2);
   document.getElementById("resultat_couple").value = cou.toFixed(2);
   document.getElementById("resultat_vitesse_angulaire").value = v_ang.toFixed(2);
+  document.getElementById("resultat_vitesse_angulaire_tr").value = tr_min.toFixed(2);
   document.getElementById("resultat_courant").value = I.toFixed(2);
   document.getElementById("resultat_batterie").value = bat.toFixed(2);
 
