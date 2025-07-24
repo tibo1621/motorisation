@@ -41,7 +41,7 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
   const cou_tot = (Fn * rayon)/(reducteur * (rend / 100));
   const cou = cou_tot / nb_moteur
 
-  const puissance_tot = (cou_tot * v_ang) / (rend / 100);
+  const puissance_tot = (cou_tot * v_ang);
   const puissance = puissance_tot / nb_moteur;
 
   const I = puissance / tension;
