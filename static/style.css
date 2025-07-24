@@ -189,7 +189,8 @@ header {
 }
 
 /* Illustration */
-#Illustration img {
+#Illustration img
+#raccourci_dimensionnement img {
   width: 100%;
   height: auto;
   border-radius: 10px;
