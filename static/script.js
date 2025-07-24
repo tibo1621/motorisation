@@ -29,7 +29,7 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
     return;
   }
 
-  // Calculs intermédiaires
+  /* Calculs intermédiaires
   const penteRad = penteDeg * Math.PI / 180;
   const rayon = (d / 100) / 2;
   const v_ang = (vitesse / rayon) * reducteur;
@@ -40,12 +40,42 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
   const Fn = Fa + Fs + Fopp;
   const cou_tot = (Fn * rayon)/(reducteur * (rend / 100));
   const cou = cou_tot / nb_moteur
-
   const puissance_tot = (cou_tot * v_ang);
   const puissance = puissance_tot / nb_moteur;
-
   const I = puissance / tension;
   const bat = I * (temps / 60);
+  */
+
+  // Calculs intermédiaires
+const penteRad = penteDeg * Math.PI / 180;
+const rayon = (d / 100) / 2;
+const v_ang = (vitesse / rayon) * reducteur;
+const tr_min = v_ang * 60 / (2 * Math.PI);
+const Fa = masse * acc;
+const Fs = masse * g * Math.sin(penteRad);
+const Fopp = (0.5 * Den * C * sur * vitesse * vitesse) + (masse * g * Crr);
+const Fn = Fa + Fs + Fopp;
+
+// Couple mécanique total sans rendement
+const cou_tot = (Fn * rayon) / reducteur;
+
+// Couple par moteur
+const cou = cou_tot / nb_moteur;
+
+// Puissance mécanique totale
+const puissance_tot = cou_tot * v_ang;
+
+// Puissance électrique totale avec rendement
+const puissance_elec_tot = puissance_tot / (rend / 100);
+
+// Puissance électrique par moteur
+const puissance = puissance_elec_tot / nb_moteur;
+
+// Courant par moteur
+const I = puissance / tension;
+
+// Capacité batterie en Ah
+const bat = I * (temps / 60);
 
 
   // Affichage résultats dans les inputs
