@@ -134,31 +134,6 @@ header {
   flex-direction: column;
 }
 
-#raccourci_dimensionnement,
-#raccourci_dimensionnement2,
-#raccourci_dimensionnement3 {
-  background-color: #2c3e50;     /* fond gris foncé */
-  border-radius: 25px;           /* coins arrondis */
-  padding: 20px;
-  flex: 1 1 300px;               /* min 300px, grandit si possible */
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-main {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap; /* pour que ça passe en colonne sur petits écrans */
-  justify-content: center; /* pour centrer les blocs horizontalement */
-  margin-bottom: 40px;
-}
-
-
-#raccourci_dimensionnement h2,
-#raccourci_dimensionnement2 h2,
-#raccourci_dimensionnement3 h2,
 #Parametre h2,
 #Illustration h2,
 #Constante h2,
@@ -220,15 +195,6 @@ main {
   margin: 0 auto;
 }
 
-#raccourci_dimensionnement img,
-#raccourci_dimensionnement2 img,
-#raccourci_dimensionnement3 img {
-  width: 30%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-}
 /* Constantes */
 .ligne-constante {
   display: flex;
