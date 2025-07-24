@@ -212,10 +212,7 @@ main {
 }
 
 /* Illustration */
-#Illustration img,
-#raccourci_dimensionnement img,
-#raccourci_dimensionnement2 img,
-#raccourci_dimensionnement3 img {
+#Illustration img {
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -223,6 +220,15 @@ main {
   margin: 0 auto;
 }
 
+#raccourci_dimensionnement img,
+#raccourci_dimensionnement2 img,
+#raccourci_dimensionnement3 img {
+  width: 30%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
 /* Constantes */
 .ligne-constante {
   display: flex;
