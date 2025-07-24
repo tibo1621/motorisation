@@ -31,7 +31,7 @@ document.getElementById("btnCalcul").addEventListener("click", function() {
 
   // Calculs intermédiaires
   const penteRad = penteDeg * Math.PI / 180;
-  const rayon = (d / 1000) / 2;
+  const rayon = (d / 100) / 2;
   const v_ang = (vitesse / rayon) * reducteur;
   const tr_min = v_ang * 60 / (2 * Math.PI);
   const Fa = masse * acc;
